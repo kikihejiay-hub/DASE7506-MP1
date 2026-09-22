@@ -1,0 +1,10 @@
+# Final model: GELU + RoPE + dropout 0.25
+python train.py --implementation student_no_swiglu --config configs/large_gelu.json --device cuda --seed 17 --steps 20000 --batch-size 32 --eval-every 500 --run-dir runs/ablation-no-swiglu
+python evaluate.py --checkpoint runs/ablation-no-swiglu/checkpoint_step19500.pt --device cpu --precision fp32 --split test
+
+# parameters: 10,509,440
+# train_tokens: 163,840,000
+# validation BPB (best @ 19500): 1.4865
+# test BPB: 1.5074
+# eval_seconds: 34.71
+# checkpoint_sha256: 680a303049e48d9308a1554c7b0e87cc6b25206a5c0dddb21533aab2fa94537d

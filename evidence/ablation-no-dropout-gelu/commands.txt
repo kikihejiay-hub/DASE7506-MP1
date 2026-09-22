@@ -1,0 +1,9 @@
+# Ablation: no dropout. GELU + RoPE + dropout 0
+python train.py --implementation student --config configs/large_gelu_no_dropout.json --device cuda --seed 17 --steps 20000 --batch-size 32 --eval-every 500 --run-dir runs/ablation-no-dropout-gelu
+python evaluate.py --checkpoint runs/ablation-no-dropout-gelu/checkpoint_step4500.pt --device cpu --precision fp32 --split test
+
+# parameters: 10,509,440
+# train_tokens: 163,840,000
+# validation BPB (best @ 4500): 1.6160
+# test BPB: 1.6392
+# eval_seconds: 33.13

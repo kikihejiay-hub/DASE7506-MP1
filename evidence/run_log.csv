@@ -1,0 +1,6 @@
+experiment,FFN,Pos,dropout,val_bpb,test_bpb,checkpoint,notes
+baseline,GELU,绝对,0,2.0711,2.1013,runs/baseline,初始基线
+final-model,GELU,RoPE,0.25,1.4865,1.5074,runs/final-model,最终模型
+ablation-no-gelu,SwiGLU,RoPE,0.25,1.5044,1.5317,runs/ablation-no-gelu,无GELU消融
+ablation-no-rope,GELU,绝对,0.25,1.5203,1.5453,runs/ablation-no-rope-gelu,无RoPE消融
+ablation-no-dropout,GELU,RoPE,0,1.6160,1.6392,runs/ablation-no-dropout-gelu,无dropout消融

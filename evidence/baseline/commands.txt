@@ -1,0 +1,10 @@
+# Baseline
+python train.py --implementation model --device cpu --threads 4 --seed 17 --run-dir runs/baseline
+python evaluate.py --checkpoint runs/baseline/checkpoint.pt --device cpu --precision fp32 --split test
+
+# train_tokens: 9,830,400
+# train_seconds: 397.76
+# validation BPB: 2.0711
+# test BPB: 2.1013
+# eval_seconds: 17.57
+# checkpoint_sha256: b7fdb67c8ef14b5166c0de1f17cf306f34800b41dfe97da856c9812cdb1f9701

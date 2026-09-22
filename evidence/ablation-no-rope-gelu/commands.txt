@@ -1,0 +1,9 @@
+# Ablation: no RoPE. GELU + absolute position + dropout 0.25
+python train.py --implementation student_no_rope --config configs/large_gelu.json --device cuda --seed 17 --steps 20000 --batch-size 32 --eval-every 500 --run-dir runs/ablation-no-rope-gelu
+python evaluate.py --checkpoint runs/ablation-no-rope-gelu/checkpoint_step19000.pt --device cpu --precision fp32 --split test
+
+# parameters: 10,599,040
+# train_tokens: 163,840,000
+# validation BPB (best @ 19000): 1.5203
+# test BPB: 1.5453
+# eval_seconds: 28.96
